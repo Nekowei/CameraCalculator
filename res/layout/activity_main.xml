@@ -1,54 +1,55 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:columnCount="1"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="nekowei.cc.MainActivity" >
 
-    <EditText
-        android:id="@+id/input"
+    <TextView
+        android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="184dp"
-        android:layout_toRightOf="@+id/ii"
+        android:layout_column="0"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="64dp"
+        android:layout_row="0"
+        android:text="@string/result"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/ii"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_gravity="left|center_vertical"
+        android:layout_row="1"
+        android:text="@string/input"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_gravity="right|center_vertical"
+        android:layout_row="1"
         android:ems="10"
         android:inputType="number" >
 
         <requestFocus />
     </EditText>
 
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/calc"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="62dp"
-        android:text="@string/result"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/ii"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/input"
-        android:layout_alignBottom="@+id/input"
-        android:layout_alignParentLeft="true"
-        android:text="@string/input"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <Button
-        android:id="@+id/calc"
+        android:id="@+id/calcu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/input"
-        android:layout_below="@+id/input"
-        android:layout_marginTop="14dp"
+        android:layout_column="0"
+        android:layout_gravity="center_horizontal"
+        android:layout_row="2"
         android:text="@string/calc" />
 
-</RelativeLayout>
+</GridLayout>

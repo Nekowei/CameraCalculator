@@ -1,5 +1,7 @@
 package nekowei.cc;
 
+import java.text.NumberFormat;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +18,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		calc = (Button) findViewById(R.id.calc);
+		calc = (Button) findViewById(R.id.calcu);
 		calc.setOnClickListener(this);
 	}
 
@@ -25,8 +27,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		EditText et = (EditText)findViewById(R.id.input);
 		double i = Double.valueOf(et.getText().toString().trim());
 		double r = CameraCalculator.caculate(i);
+		NumberFormat nf = NumberFormat.getInstance();
+		nf.setMaximumFractionDigits(2);
 		TextView tv = (TextView) findViewById(R.id.result);
-		String result = getString(R.string.result) + r + "бу";
+		String result = getString(R.string.result) + nf.format(r) + "бу";
 		tv.setText(result);
 	}
 
