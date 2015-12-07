@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CamCalc</string>
+    <string name="input">镜头焦距(mm):</string>
+    <string name="calc">计算</string>
+    <string name="result">视角:</string>
+
+</resources>
